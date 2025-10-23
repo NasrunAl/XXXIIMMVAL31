@@ -1,0 +1,154 @@
+/* style.css - theme: blue - white - gold gradient, modern cards & buttons */
+
+/* Page background gradient */
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #0a66d1 0%, #66b3ff 40%, #ffffff 65%, #ffd966 100%);
+  color: #123;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, rgba(0, 58, 135, 0.95), rgba(0, 153, 255, 0.9) 60%, rgba(255, 215, 0, 0.9));
+  color: #fff;
+  padding-top: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar .sidebar-heading {
+  letter-spacing: 0.4px;
+}
+
+.sidebar .list-group {
+  padding: 8px 0;
+}
+
+.sidebar .list-group-item {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin: 6px 10px;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.sidebar .list-group-item:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+}
+
+/* collapsed state */
+#wrapper.toggled .sidebar {
+  margin-left: -260px;
+}
+
+/* page wrapper content adjustments */
+#page-content-wrapper {
+  transition: all 0.3s ease;
+  padding-bottom: 40px;
+}
+
+/* Topbar toggle button */
+.btn-toggle {
+  background: linear-gradient(45deg, #ffffff, #f0f8ff);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Card */
+.card {
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(8, 20, 50, 0.08);
+  overflow: hidden;
+}
+
+.card .card-body h4 {
+  color: #03396c;
+}
+
+/* Buttons */
+.btn,
+.btn-primary {
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #0056b3, #00b0ff);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(3, 51, 102, 0.16);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(3, 51, 102, 0.2);
+}
+
+/* outline style */
+.btn-outline {
+  background: transparent;
+  color: #03396c;
+  border: 2px solid rgba(3, 51, 102, 0.08);
+}
+
+/* Panel (legacy from original) */
+.panel {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+/* Tables */
+.table {
+  background: transparent;
+}
+
+.table thead {
+  background: linear-gradient(90deg, rgba(0, 88, 179, 0.12), rgba(255, 215, 0, 0.06));
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+/* Forms */
+.form-label {
+  font-weight: 600;
+}
+
+/* Footer */
+.site-footer {
+  position: relative;
+  z-index: 3;
+}
+
+/* make the UI mobile friendly */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+  }
+  #wrapper.toggled .sidebar {
+    transform: translateX(0);
+  }
+  #page-content-wrapper {
+    padding: 15px;
+  }
+}
